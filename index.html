@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для Кристины 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    text-align: center;
+    color: #a34f78;
+    background: linear-gradient(
+        135deg, #ffe1ed, #fff0f5,
+        #f4ddff, #ffe9e0
+    );
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px 18px;
+}
+
+h1 {
+    font-size: clamp(30px, 7vw, 46px);
+    color: #d45d91;
+    text-shadow: 2px 3px 12px white;
+}
+
+.subtitle {
+    font-size: 19px;
+    font-style: italic;
+}
+
+.card {
+    background: rgba(255,255,255,0.76);
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 30px 22px;
+    margin: 28px 0;
+    box-shadow: 0 10px 35px #c77ca044;
+    backdrop-filter: blur(8px);
+}
+
+.big-heart {
+    font-size: 75px;
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+.message {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.decor {
+    font-size: 28px;
+    letter-spacing: 8px;
+}
+
+button {
+    background: linear-gradient(135deg,#f4a0c2,#d76b9c);
+    color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 16px 28px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    animation: float 7s linear infinite;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(105vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.7; }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    padding: 25px;
+    font-size: 17px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="decor">🎀 ✨ 🌸 ✨ 🎀</div>
+
+    <h1>С днём рождения, Кристина!</h1>
+
+    <p class="subtitle">
+        Сегодня этот маленький мир создан для тебя 💗
+    </p>
+
+    <div class="card">
+        <div class="big-heart">💗</div>
+
+        <h2>Особенное поздравление</h2>
+
+        <p class="message">
+        Кристина, поздравляю тебя! Пусть всё задуманное легко сбывается, каждый день радует приятными мелочами, а рядом будут люди, с которыми спокойно и радостно. Желаю, чтобы в жизни было побольше поводов улыбаться и совсем не было причин грустить. Пусть удача идёт с тобой рука об руку, а счастье живёт прямо в твоём сердце!
+        </p>
+
+        <div class="decor">🌷 💕 🌷</div>
+    </div>
+
+    <div class="card">
+        <h2>✨ Немного волшебства ✨</h2>
+
+        <p class="message">
+            Пусть исполняются мечты,<br>
+            случаются чудеса,<br>
+            а каждый день приносит<br>
+            что-нибудь прекрасное!
+        </p>
+
+        <div class="decor">🦋 🎂 🎁 🧸</div>
+    </div>
+
+    <div class="card">
+        <div class="big-heart">🎀</div>
+
+        <h2>И ещё кое-что...</h2>
+
+        <p class="message">
+            Ты заслуживаешь всего самого
+            прекрасного! Пусть счастье всегда
+            будет рядом с тобой 💗
+        </p>
+
+        <button onclick="alert('Сияй, мечтай, улыбайся и будь счастлива! С днём рождения! 💗🎂')">
+            Нажми на меня 💝
+        </button>
+    </div>
+
+    <footer>
+        Сделано специально для Кристины
+        <div class="decor">🌸 💗 🎀 💗 🌸</div>
+    </footer>
+
+</div>
+
+<script>
+const symbols = ["💗", "💕", "✨", "🌸", "🎀"];
+
+for (let i = 0; i < 18; i++) {
+    const item = document.createElement("div");
+    item.className = "floating";
+    item.innerText =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.animationDuration =
+        (5 + Math.random() * 7) + "s";
+    item.style.animationDelay =
+        Math.random() * 8 + "s";
+    item.style.fontSize =
+        (15 + Math.random() * 20) + "px";document.body.appendChild(item);
+}
+</script>
+
+</body>
+</html>
